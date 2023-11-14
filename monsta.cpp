@@ -8,6 +8,7 @@ class Solution{
 public:
     int elim(std::vector<int>& dist, std::vector<int>& speed){
         int s = dist.size();
+        int ans = s;
         unordered_map<int,vector<int>> death;
         //vector<vector<int>> death(s, vector<int>(s, 0));
         for(int i = 0;i < s;i++){
@@ -21,13 +22,16 @@ public:
         cout << std::endl;
         for (auto &x : death){
             cout << "key: "<< x.first << endl;
-            for (auto &l : death[x.first]){
-                cout << l;
+            cout << death[x.first].size() << endl;
+            if(death[x.first].size() > 1){
+                ans = x.first + 1;
             }
-            cout << endl;
+            //for (auto &l : death[x.first]){
+            //    cout << l;
+            //}
+            //cout << endl;
         }
         cout << "next" << endl;
-        int ans;
         return ans;
     }
 };
