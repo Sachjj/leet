@@ -1,19 +1,31 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <cmath>
 
 using namespace std;
 
 class Solution3{
     public:
     int sol(vector<int> &dist, vector<int> &speed){
-        vector<int> test;
-        int ans;
-        //test = dist - speed;
-        //for(auto &i : test){
-        //    cout << i << endl;
-        //}
-        return ans;
+        int s = dist.size();
+        vector<int> arr(s,0);
+
+        for(int i = 0;i < s;i++){
+            int l = ceil(static_cast<double>(dist[i]/speed[i]));
+
+            if(l < s){
+                arr[l]++;
+            }
+        }
+        int eliminated = 0;
+        for(int j = 0;j < s;j++){
+            if(eliminated + arr[j] > j){
+                return(j);
+            }
+            eliminated+=arr[j];
+        }
+        return s;
     }
 };
 
@@ -29,7 +41,6 @@ class Solution2{
             if(l >= arr.size()){
                 arr.resize(l+1);
             }
-            arr[l]++;
             //=cout << l << std::endl;
             if(arr[l] > l){
                 cout << "inloop" << arr[l] << endl;
@@ -37,6 +48,7 @@ class Solution2{
                 return(ans);
                 break;
             }
+            arr[l]++;
             ans++;
             cout << l << " " << arr[l] << std::endl;
         }
@@ -80,12 +92,12 @@ int main(){
     Solution pee;
     Solution2 fart;
     Solution3 shit;
-    vector<vector<int>> dist{{1,3,4}};
+    vector<vector<int>> dist{//{1,3,4}};
                             //,{1,1,2,3},{3,2,4},
-                            //{4,2,8}};
-    vector<vector<int>> speed{{1,1,1}};
+                            {4,2,8}};
+    vector<vector<int>> speed{//{1,1,1}};
                             //, {1,1,1,1}, {5,3,2},
-                            //{2,1,4}};
+                            {2,1,4}};
     int n = dist.size();
     for(int i = 0;i < n;i++){
         //pee.elim(dist[i], speed[i]);
