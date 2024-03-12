@@ -192,10 +192,11 @@
 }
 
 .pic_container{
-    margin-left: 350px;
-    margin-top: 100px;
+    display: block;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    margin: auto;
     max-width: 1200px;
     width: 95%;
 }
@@ -244,7 +245,7 @@
 .slider-scrollbar .scrollbar-thumb{
     position: absolute;
     height: 100%;
-    width: 50%;
+    width: 20%;
     background: #000;
     border-radius: inherit;
     cursor: grab;
@@ -274,4 +275,24 @@
 
 .slider-wrapper .slide-button#prev-slide {
     color: grey;
+}
+
+@media (max-width: 1023px) {
+    /*.slider-wrapper .slide-button {
+        display: none!important;
+    }*/
+
+    .slider-wrapper .image-list {
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .slider-wrapper .image-list .image-item {
+        width: 280px;
+        height: 380px;
+    }
+
+    .slider-scrollbar .scollbar-thumb {
+        width: 20%;
+    }
 }
