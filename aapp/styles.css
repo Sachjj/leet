@@ -251,8 +251,6 @@
 }
 .slider-scrollbar .scrollbar-thumb:active{
     cursor: grabbing;
-    height: 8px;
-    top: -2px;
 }
 
 .slider-scrollbar .scrollbar-thumb::after{

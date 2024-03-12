@@ -19,10 +19,11 @@ const initSlider = () => {
 
     scrollbarThumb.addEventListener("mousedown", (e) => {
         const startX = e.clientX; //horizontal mouse pointer coordinate
+        const thumbPosition = scrollbarThumb.offsetLeft
 
         const handleMouseMove = (e) => {
             const deltaX = e.clientX - startX;
-            const newThumbPosition = scrollbarThumb.offsetleft + deltaX;
+            const newThumbPosition = thumbPosition + deltaX;
             scrollbarThumb.style.left = `${newThumbPosition}px`;
         }
 
