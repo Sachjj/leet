@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 * {
     box-sizing:border-box;
     margin:0;
     padding:0;
-    font-family: 'VT323', 'sans-serif';
+    font-family: 'Poppins', 'sans-serif';
     scroll-behavior: smooth;
 }
 
 .navbar {
     background: white;
     height: 80px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,8 +28,8 @@
     z-index: 1;
     width: 100%;
     max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 50px;
+    margin: 0 0;
+    padding: 0 0%;
 }
 
 #navbar_logo {
@@ -44,11 +45,10 @@
     align-items: center;
     cursor: pointer;
     text-decoration: none;
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
 .navbar_menu{
-    font-size: 2rem;
     display: flex;
     align-items: center;
     list-style: none;
@@ -192,21 +192,140 @@
     }
 }
 
-.background-slides {
-    position: absolute;
+/*hero*/
+
+.hero {
+    background: wheat;
+    padding: 200px 0;
+    height: 1300px;
+}
+
+.hero_container{
     display: flex;
-    z-index: 000;
-    align-content: center;
+    flex-direction: column;
     justify-content: center;
-    top: 0;
-    left: 0;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 30px;
+}
+
+.hero_heading {
+    font-size: 100px;
+    margin-bottom: 24px;
+    color: black;
+}
+
+.hero_heading span {
+    color: lightslategray;
+}
+
+.hero_description {
+    font-size: 60px;   
+}
+
+:root{
+    --width-circle: 150vw;
+    --radius: calc(100vw / 6);
+}
+
+.pic_container{
+    margin-left: 350px;
+    margin-top: 100px;
+    align-items: center;
+    justify-content: center;
+    max-width: 1740px;
+    width: 95%;
+}
+
+.pic_container .slider-wrapper {
+    position: relative;
+    right: 400px;
+    width: 1740px;
+}
+
+.slider-wrapper .image-list {
+    display: grid;
+    gap: 80px;
+    font-size: 0;
+    margin-bottom: 30px;
+    overflow-x:auto;
+    scrollbar-width: none;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.slider-wrapper .image-list .image-item {
+    border-radius: var(--radius);
+    background-color: white;
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.slider-wrapper .image-list::-webkit-scrollbar{
+    display: none;
+
+}
+.pic_container .slider-scrollbar {
+    height: 24px;
     width: 100%;
-    height: 100%;
-}
-
-.depop-widget {
-    position: absolute;
     display: flex;
-    z-index: 111;
+    position: relative;
+    right: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-scrollbar .scrollbar-track{
+    height: 2px;
+    width: 100%;
+    background: #ccc;
+    position: relative;
+    border-radius: 4px;
+}
+
+.slider-scrollbar:hover .scrollbar-track{
+    height: 4px;
+    transition: ease-in all 0.3s;
 
 }
+
+.slider-scrollbar .scrollbar-thumb{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background: #000;
+    border-radius: inherit;
+    cursor: grab;
+}
+.slider-scrollbar .scrollbar-thumb:active{
+    cursor: grabbing;
+}
+
+.slider-scrollbar .scrollbar-thumb::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10;
+    bottom: -10;
+}
+
+.slider-wrapper .slide-button {
+    position: relative;
+    bottom: 60px;
+    left: 17px;
+    height: 30px;
+    width: 50px;
+    border: none;
+}
+
+.slider-wrapper .slide-button:hover {
+    color: grey;
+}
+
+.slider-wrapper .slide-button#prev-slide {
+    color: grey;
+}
+
